@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/ai-warp/0.4.3.json",
+  "service": {
+    "openapi": true
+  },
+  "watch": true,
+  "showAiWarpHomepage": false,
+  "rateLimiting": {
+    "max": 100,
+    "timeWindow": "1 minute",
+    "maxByClaims": [
+      {
+        "claim": "userType",
+        "claimValue": "premium",
+        "max": 1000
+      }
+    ]
+  },
+  "plugins": {
+    "paths": [
+      "./plugins",
+      {
+        "path": "./auth",
+        "options": {
+          "GITHUB_OAUTH_CLIENT_ID": "{PLT_GITHUB_OAUTH_CLIENT_ID}",
+          "GITHUB_OAUTH_CLIENT_SECRET": "{PLT_GITHUB_OAUTH_CLIENT_SECRET}"
+        }
+      }
+    ]
+  },
+  "module": "@platformatic/ai-warp",
+  "aiProvider": {
+    "openai": {
+      "model": "gpt-3.5-turbo",
+      "apiKey": "{PLT_DEVOTION_AI_API_KEY}"
+    }
+  },
+  "promptDecorators": {
+    "prefix": "You are an expert summarizer. Your task is to distill the essential information from the following text and present it in a clear and concise manner.\nThe text to summarize is: ",
+    "suffix": "Please provide a brief, accurate, and easy-to-understand summary."
+  },
+  "clients": [
+    {
+      "schema": "summary.openapi.json",
+      "name": "summary",
+      "type": "openapi",
+      "url": "{PLT_SUMMARY_URL}"
+    }
+  ]
+}
