@@ -1,6 +1,6 @@
-# Platformatic Runtime API
+# AI Text Summarizer
 
-This is a generated [Platformatic Runtime](https://docs.platformatic.dev/docs/runtime/overview) application.
+This is an [AI Text Summarizer](https://ai-text-summarizer.fly.dev/) application powered by Platformatic AI-warp and React (Vite). Platformatic AI-warp handles authentication via GitHub OAuth2 and processes AI prompts, while the React.js frontend application provides a user-friendly interface for summarzing texts.
 
 ## Requirements
 
@@ -21,14 +21,6 @@ Run the API with:
 
 ```bash
 npm start
-```
-
-## Adding a Service
-
-Adding a new service to this project is as simple as running `create-platformatic` again, like so:
-
-```
-npx create-platformatic
 ```
 
 ## Running the Dockerfile 
