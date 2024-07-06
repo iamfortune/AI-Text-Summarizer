@@ -4,7 +4,7 @@
     "services/*"
   ],
   "scripts": {
-    "start": "npm run build --prefix ./services/devotion && platformatic start",
+    "start": "platformatic start",
     "dev": "vite",
     "build": "vite build",
     "type": "module"

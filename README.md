@@ -30,3 +30,17 @@ Adding a new service to this project is as simple as running `create-platformati
 ```
 npx create-platformatic
 ```
+
+## Running the Dockerfile 
+
+1. Build the Docker image with:
+
+```
+docker build -t text-summarizer-app .
+```
+
+2. Run the Docker container with environment variables:
+
+```
+docker run --env-file .env -p 3042:3042 text-summarizer-app
+```

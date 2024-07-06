@@ -3,6 +3,7 @@ dist
 
 # dotenv environment variable files
 .env
+fly.toml
 
 # database files
 *.sqlite
